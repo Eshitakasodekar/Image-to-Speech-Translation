@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEGETABLES</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: #007bff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        figure {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        figure:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #eaeaea;
+        }
+
+        figcaption {
+            font-size: 1.1rem;
+            color: #555;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            figure {
+                width: 150px;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                padding: 10px;
+            }
+
+            figure {
+                width: 120px;
+            }
+
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>VEGETABLES</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('Potato')">
+            <img src="./top/food types/vegetables/potato.png" alt="Potato">
+            <figcaption>Potato</figcaption>
+        </figure>
+        <figure onclick="speak('Tomato')">
+            <img src="./top/food types/vegetables/tomato.png" alt="Tomato">
+            <figcaption>Tomato</figcaption>
+        </figure>
+        <figure onclick="speak('Broccoli')">
+            <img src="./top/food types/vegetables/broccoli.png" alt="Broccoli">
+            <figcaption>Broccoli</figcaption>
+        </figure>
+        <figure onclick="speak('Carrot')">
+            <img src="./top/food types/vegetables/carrot.png" alt="Carrot">
+            <figcaption>Carrot</figcaption>
+        </figure>
+        <figure onclick="speak('Cauliflower')">
+            <img src="./top/food types/vegetables/cauliflower.png" alt="Cauliflower">
+            <figcaption>Cauliflower</figcaption>
+        </figure>
+        <figure onclick="speak('Celery')">
+            <img src="./top/food types/vegetables/celery.png" alt="Celery">
+            <figcaption>Celery</figcaption>
+        </figure>
+        <figure onclick="speak('Corn')">
+            <img src="./top/food types/vegetables/corn.png" alt="Corn">
+            <figcaption>Corn</figcaption>
+        </figure>
+        <figure onclick="speak('Eggplant')">
+            <img src="./top/food types/vegetables/eggplant.png" alt="Eggplant">
+            <figcaption>Eggplant</figcaption>
+        </figure>
+        <figure onclick="speak('Garlic')">
+            <img src="./top/food types/vegetables/garlic.png" alt="Garlic">
+            <figcaption>Garlic</figcaption>
+        </figure>
+        <figure onclick="speak('Green Pepper')">
+            <img src="./top/food types/vegetables/green pepper.png" alt="Green Pepper">
+            <figcaption>Green Pepper</figcaption>
+        </figure>
+        <figure onclick="speak('Mushroom')">
+            <img src="./top/food types/vegetables/mushroom.png" alt="Mushroom">
+            <figcaption>Mushroom</figcaption>
+        </figure>
+        <figure onclick="speak('Onion')">
+            <img src="./top/food types/vegetables/onion.png" alt="Onion">
+            <figcaption>Onion</figcaption>
+        </figure>
+        <figure onclick="speak('Pea')">
+            <img src="./top/food types/vegetables/pea.png" alt="Pea">
+            <figcaption>Pea</figcaption>
+        </figure>
+        <figure onclick="speak('Radish')">
+            <img src="./top/food types/vegetables/radish.png" alt="Radish">
+            <figcaption>Radish</figcaption>
+        </figure>
+        <figure onclick="speak('Red Cabbage')">
+            <img src="./top/food types/vegetables/red cabbage.png" alt="Red Cabbage">
+            <figcaption>Red Cabbage</figcaption>
+        </figure>
+        <figure onclick="speak('Red Pepper')">
+            <img src="./top/food types/vegetables/red pepper.png" alt="Red Pepper">
+            <figcaption>Red Pepper</figcaption>
+        </figure>
+        <!-- Add more figures as needed -->
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance("I want " + text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+
+</body>
+</html>

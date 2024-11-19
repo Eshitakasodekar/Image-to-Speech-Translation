@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directions</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+    
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-transform: uppercase;
+        }
+    
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+    
+        figure {
+            margin: 0;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        figure:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            border: 3px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+    
+        img:hover {
+            border-color: #007bff;
+        }
+    
+        figcaption {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #444;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+    
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+    
+            img {
+                width: 140px;
+                height: 140px;
+            }
+    
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+    
+            img {
+                width: 100px;
+                height: 100px;
+            }
+    
+            figcaption {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>Directions</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('Go Back')">
+            <img src="./top/Directions/Go Back.png" alt="Go back">
+            <figcaption>Go Back</figcaption>
+        </figure>
+        <figure onclick="speak('Go Down')">
+            <img src="./top/Directions/Go Down.png" alt="Go Down">
+            <figcaption>Go Down</figcaption>
+        </figure>
+        <figure onclick="speak('Go Up')">
+            <img src="./top/Directions/Go Up.png" alt="Go Up">
+            <figcaption>Go up</figcaption>
+        </figure>
+        <figure onclick="speak('Go Straight Ahead')">
+            <img src="./top/Directions/Straight Ahead.png" alt="Straight Ahead">
+            <figcaption>Straight Ahead</figcaption>
+        </figure>
+        <figure onclick="speak('Turn Left')">
+            <img src="./top/Directions/Turn Left.png" alt="Turn Left">
+            <figcaption>Turn Left</figcaption>
+        </figure>
+        <figure onclick="speak('Turn right')">
+            <img src="./top/Directions/Turn right.png" alt="Turn right">
+            <figcaption>Turn right</figcaption>
+        </figure>
+        <!-- Add more figures as needed -->
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance(" " + text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        figure {
+            margin: 0;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        figure:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            border: 3px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+
+        img:hover {
+            border-color: #007bff;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            img {
+                width: 140px;
+                height: 140px;
+            }
+
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            figcaption {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>Sign</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('Above something')">
+            <img src="./top/Sign/Above.png" alt="Above">
+            <figcaption>Above</figcaption>
+        </figure>
+        <figure onclick="speak('Telling age')">
+            <img src="./top/Sign/Age.png" alt="Age">
+            <figcaption>Age</figcaption>
+        </figure>
+        <figure onclick="speak('This is bad')">
+            <img src="./top/Sign/Bad.png" alt="Bad">
+            <figcaption>Bad</figcaption>
+        </figure>
+        <figure onclick="speak('Time for breakfast')">
+            <img src="./top/Sign/Breakfast.png" alt="Breakfast">
+            <figcaption>Breakfast</figcaption>
+        </figure>
+        <figure onclick="speak('Yes, I can do it')">
+            <img src="./top/Sign/Can.png" alt="Can">
+            <figcaption>Can</figcaption>
+        </figure>
+        <figure onclick="speak('Feeling like crying')">
+            <img src="./top/Sign/Cry.png" alt="Cry">
+            <figcaption>Cry</figcaption>
+        </figure>
+        <figure onclick="speak('It is a new day')">
+            <img src="./top/Sign/Day.png" alt="Day">
+            <figcaption>Day</figcaption>
+        </figure>
+        <figure onclick="speak('Talking to a doctor')">
+            <img src="./top/Sign/Doctor.png" alt="Doctor">
+            <figcaption>Doctor</figcaption>
+        </figure>
+        <figure onclick="speak('Time to eat')">
+            <img src="./top/Sign/Eat.png" alt="Eat">
+            <figcaption>Eat</figcaption>
+        </figure>
+        <figure onclick="speak('Feet are tired')">
+            <img src="./top/Sign/Feet.png" alt="Feet">
+            <figcaption>Feet</figcaption>
+        </figure>
+        <figure onclick="speak('I forgot something')">
+            <img src="./top/Sign/Forget.png" alt="Forget">
+            <figcaption>Forget</figcaption>
+        </figure>
+        <figure onclick="speak('I will give it to you')">
+            <img src="./top/Sign/Give.png" alt="Give">
+            <figcaption>Give</figcaption>
+        </figure>
+        <figure onclick="speak('This will grow')">
+            <img src="./top/Sign/Grow.png" alt="Grow">
+            <figcaption>Grow</figcaption>
+        </figure>
+        <figure onclick="speak('It belongs to him')">
+            <img src="./top/Sign/Him.png" alt="Him">
+            <figcaption>Him</figcaption>
+        </figure>
+        <figure onclick="speak('An hour has passed')">
+            <img src="./top/Sign/Hour.png" alt="Hour">
+            <figcaption>Hour</figcaption>
+        </figure>
+        <figure onclick="speak('I have an idea')">
+            <img src="./top/Sign/Idea.png" alt="Idea">
+            <figcaption>Idea</figcaption>
+        </figure>
+        <figure onclick="speak('It is old')">
+            <img src="./top/Sign/Old.png" alt="Old">
+            <figcaption>Old</figcaption>
+        </figure>
+        <figure onclick="speak('Time to promise')">
+            <img src="./top/Sign/Promise.png" alt="Promise">
+            <figcaption>Promise</figcaption>
+        </figure>
+        <figure onclick="speak('Do you have a question?')">
+            <img src="./top/Sign/Question.png" alt="Question">
+            <figcaption>Question</figcaption>
+        </figure>
+        <figure onclick="speak('Please remember')">
+            <img src="./top/Sign/Remember.png" alt="Remember">
+            <figcaption>Remember</figcaption>
+        </figure>
+        <figure onclick="speak('It is the same')">
+            <img src="./top/Sign/Same.png" alt="Same">
+            <figcaption>Same</figcaption>
+        </figure>
+        <figure onclick="speak('I see it')">
+            <img src="./top/Sign/See.png" alt="See">
+            <figcaption>See</figcaption>
+        </figure>
+        <figure onclick="speak('Let us start')">
+            <img src="./top/Sign/Start.png" alt="Start">
+            <figcaption>Start</figcaption>
+        </figure>
+        <figure onclick="speak('Think about it')">
+            <img src="./top/Sign/Think.png" alt="Think">
+            <figcaption>Think</figcaption>
+        </figure>
+        <figure onclick="speak('I usually do this')">
+            <img src="./top/Sign/Usually.png" alt="Usually">
+            <figcaption>Usually</figcaption>
+        </figure>
+        <figure onclick="speak('It happened yesterday')">
+            <img src="./top/Sign/Yesterday.png" alt="Yesterday">
+            <figcaption>Yesterday</figcaption>
+        </figure>
+        <!-- Add more figures as needed -->
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance(text); 
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+</body>
+</html>

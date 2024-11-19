@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Sign Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .input-area {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        .sign-language-display {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .sign-language-display img {
+            width: 60px;
+            height: auto;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text to Sign Language</h1>
+    <div class="input-area">
+        <label for="textInput">Type your message:</label>
+        <input type="text" id="textInput" placeholder="Type something...">
+        <select id="commonPhrases" onchange="insertPhrase(this.value)">
+            <option value="">Select a common phrase</option>
+            <option value="hello">Hello</option>
+            <option value="how are you">How are you?</option>
+        </select>
+    </div>
+    <div>
+        <button onclick="startVoiceRecognition()">🎤 Speak</button>
+        <button id="showSignLanguageButton">Show Sign Language</button>
+        <button onclick="speakText()">🔊 Hear Text</button>
+    </div>
+    <div id="typedTextDisplay"></div>
+    <div class="sign-language-display" id="signLanguageDisplay"></div>
+
+    <script>
+        const signLanguageMap = {
+            "a": "./top/Alphabets/A.png",
+            "b": "./top/Alphabets/B.png",
+            "c": "./top/Alphabets/C.png",
+            "d": "./top/Alphabets/D.png",
+            "e": "./top/Alphabets/E.png",
+            "f": "./top/Alphabets/F.png",
+            "g": "./top/Alphabets/G.png",
+            "h": "./top/Alphabets/H.png",
+            "i": "./top/Alphabets/I.png",
+            "j": "./top/Alphabets/J.png",
+            "k": "./top/Alphabets/K.png",
+            "l": "./top/Alphabets/L.png",
+            "m": "./top/Alphabets/M.png",
+            "n": "./top/Alphabets/N.png",
+            "o": "./top/Alphabets/O.png",
+            "p": "./top/Alphabets/P.png",
+            "q": "./top/Alphabets/Q.png",
+            "r": "./top/Alphabets/R.png",
+            "s": "./top/Alphabets/S.png",
+            "t": "./top/Alphabets/T.png",
+            "u": "./top/Alphabets/U.png",
+            "v": "./top/Alphabets/V.png",
+            "w": "./top/Alphabets/W.png",
+            "x": "./top/Alphabets/X.png",
+            "y": "./top/Alphabets/Y.png",
+            "z": "./top/Alphabets/Z.png",
+            " ": "./top/Alphabets/space.jpg"
+        };
+
+        function showSignLanguage() {
+            const inputText = document.getElementById('textInput').value.toLowerCase();
+            const displayArea = document.getElementById('signLanguageDisplay');
+            const textDisplay = document.getElementById('typedTextDisplay');
+            
+            displayArea.innerHTML = '';
+            textDisplay.textContent = inputText.toUpperCase();
+
+            for (let i = 0; i < inputText.length; i++) {
+                const char = inputText[i];
+                if (signLanguageMap[char]) {
+                    const img = document.createElement('img');
+                    img.src = signLanguageMap[char];
+                    img.alt = char;
+                    displayArea.appendChild(img);
+                }
+            }
+        }
+
+        function insertPhrase(phrase) {
+            document.getElementById('textInput').value = phrase;
+            showSignLanguage();
+        }
+
+        function startVoiceRecognition() {
+            if (!window.webkitSpeechRecognition) {
+                alert("Speech recognition is not supported in your browser.");
+                return;
+            }
+            const recognition = new window.webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.onresult = (event) => {
+                document.getElementById('textInput').value = event.results[0][0].transcript;
+                showSignLanguage();
+            };
+            recognition.start();
+        }
+
+        function speakText() {
+            const text = document.getElementById('textInput').value;
+            if (text.trim() === "") {
+                alert("Please enter some text to speak!");
+                return;
+            }
+            const utterance = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.cancel(); // Stop any ongoing speech
+            window.speechSynthesis.speak(utterance);
+        }
+
+        document.getElementById('showSignLanguageButton').addEventListener('click', showSignLanguage);
+    </script>
+</body>
+</html>

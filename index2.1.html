@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSPITAL</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: #007bff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        figure {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        figure:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #eaeaea;
+        }
+
+        figcaption {
+            font-size: 1.1rem;
+            color: #555;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            figure {
+                width: 150px;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                padding: 10px;
+            }
+
+            figure {
+                width: 120px;
+            }
+
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>Body Pain</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('Ankle')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Ankle.png" alt="Ankle">
+            <figcaption>Ankle</figcaption>
+        </figure>
+        <figure onclick="speak('Arm')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Arm.png" alt="Arm">
+            <figcaption>Arm</figcaption>
+        </figure>
+        <figure onclick="speak('Back')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Back.png" alt="Back">
+            <figcaption>Back</figcaption>
+        </figure>
+        <figure onclick="speak('Chest')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Chest.png" alt="Chest">
+            <figcaption>Chest</figcaption>
+        </figure>
+        <figure onclick="speak('Ear')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Ear.png" alt="Ear">
+            <figcaption>Ear</figcaption>
+        </figure>
+        <figure onclick="speak('Eye')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Eye.png" alt="Eye">
+            <figcaption>Eye</figcaption>
+        </figure>
+        <figure onclick="speak('Forehead')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Forehead.png" alt="Forehead">
+            <figcaption>Forehead</figcaption>
+        </figure>
+        <figure onclick="speak('Hair')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Hair.png" alt="Hair">
+            <figcaption>Hair</figcaption>
+        </figure>
+        <figure onclick="speak('Hands')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Hands.png" alt="Hands">
+            <figcaption>Hands</figcaption>
+        </figure>
+        <figure onclick="speak('Knee')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Knee.png" alt="Knee">
+            <figcaption>Knee</figcaption>
+        </figure>
+        <figure onclick="speak('Legs')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Legs.png" alt="Legs">
+            <figcaption>Legs</figcaption>
+        </figure>
+        <figure onclick="speak('Heel')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Heel.png" alt="Heel">
+            <figcaption>Heel</figcaption>
+        </figure>
+        <figure onclick="speak('Neck')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Neck.png" alt="Neck">
+            <figcaption>Neck</figcaption>
+        </figure>
+        <figure onclick="speak('Mouth')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Mouth.png" alt="Mouth">
+            <figcaption>Mouth</figcaption>
+        </figure>
+        <figure onclick="speak('Nose')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Nose.png" alt="Nose">
+            <figcaption>Nose</figcaption>
+        </figure>
+        <figure onclick="speak('Shoulder')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Shoulder.png" alt="Shoulder">
+            <figcaption>Shoulder</figcaption>
+        </figure>
+        <figure onclick="speak('Stomach')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Stomach.png" alt="Stomach">
+            <figcaption>Stomach</figcaption>
+        </figure>
+        <figure onclick="speak('Teeth')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Teeth.png" alt="Teeth">
+            <figcaption>Teeth</figcaption>
+        </figure>
+        <figure onclick="speak('Toe')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Toe.png" alt="Toe">
+            <figcaption>Toe</figcaption>
+        </figure>
+        <figure onclick="speak('Wirst')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Wirst.png" alt="Wirst">
+            <figcaption>Wirst</figcaption>
+        </figure>
+        <figure onclick="speak('Waist')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Waist.png" alt="Waist">
+            <figcaption>Waist</figcaption>
+        </figure>
+        <figure onclick="speak('Tongue')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Tongue.png" alt="Tongue">
+            <figcaption>Tongue</figcaption>
+        </figure>
+        <figure onclick="speak('Palm')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Palm.png" alt="Palm">
+            <figcaption>Palm</figcaption>
+        </figure>
+        <figure onclick="speak('Nail')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Nail.png" alt="Nail">
+            <figcaption>Nail</figcaption>
+        </figure>
+        <figure onclick="speak('Lips')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Lips.png" alt="Lips">
+            <figcaption>Lips</figcaption>
+        </figure>
+        <figure onclick="speak('Hip')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Hip.png" alt="Hip">
+            <figcaption>Hip</figcaption>
+        </figure>
+        <figure onclick="speak('ForeArm')">
+            <img src="./top/emergency types/Emergency variations/hospital types/ForeArm.png" alt="ForeArm">
+            <figcaption>ForeArm</figcaption>
+        </figure>
+        <figure onclick="speak('Elbow')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Elbow.png" alt="Elbow">
+            <figcaption>Elbow</figcaption>
+        </figure>
+        <figure onclick="speak('Foot')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Foot.png" alt="Foot">
+            <figcaption>Foot</figcaption>
+        </figure>
+        <figure onclick="speak('Finger')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Finger.png" alt="Finger">
+            <figcaption>Finger</figcaption>
+        </figure>
+        <figure onclick="speak('Chin')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Chin.png" alt="Chin">
+            <figcaption>Chin</figcaption>
+        </figure>
+        <figure onclick="speak('Cheek')">
+            <img src="./top/emergency types/Emergency variations/hospital types/Cheek.png" alt="Cheek">
+            <figcaption>Cheek</figcaption>
+        </figure>
+        <!-- Add more figures as needed -->
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance("I have pain in " + text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+
+</body>
+</html>

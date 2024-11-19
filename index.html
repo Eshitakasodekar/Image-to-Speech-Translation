@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Image Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Interactive Image Categories</h1>
+    </header>
+    <main>
+        <section class="category">
+            <figure>
+                <figcaption>Emergency</figcaption>
+                <a href="./index2.html" target="_blank">
+                    <img src="./top/emergency.webp" alt="Emergency">
+                </a>
+            </figure>
+            <figure>
+                <figcaption>Text to sign</figcaption>
+                <a href="./texttosign.html" target="_blank">
+                    <img src="./texttosign.png" alt="Text to Sign">
+                </a>
+            </figure>
+            <figure>
+                <figcaption>Directions</figcaption>
+                <a href="./index6.html" target="_blank">
+                    <img src="./top/directions.png" alt="Directions">
+                </a>
+            </figure>
+            <figure onclick="speak('Fire')">
+                <figcaption>Fire</figcaption>
+                <img src="./top/Fire.jpeg" alt="Fire">
+            </figure>
+            <figure>
+                <figcaption>Transportation</figcaption>
+                <a href="./index10.html" target="_blank">
+                    <img src="./top/transportation.jpg" alt="Transportation">
+                </a>
+            </figure>
+            <figure onclick="speak('I Want to Drink Water')">
+                <figcaption>Water</figcaption>
+                <img src="./top/food types/Drinks/Water.png" alt="Water">
+            </figure>
+            <figure onclick="speak('Danger')">
+                <figcaption>Danger</figcaption>
+                <img src="./top/Danger.jpg" alt="Danger">
+            </figure>
+            <figure>
+                <figcaption>Text to speech</figcaption>
+                <a href="./inputfile.html" target="_blank">
+                    <img src="./top/texttospeech.png" alt="Text to Speech">
+                </a>
+            </figure>
+            <figure>
+                <figcaption>Food Types</figcaption>
+                <a href="./index3.html" target="_blank">
+                    <img src="./top/food type.jpg" alt="Food Types">
+                </a>
+            </figure>
+            <figure>
+                <figcaption>Moods</figcaption>
+                <a href="./index4.html" target="_blank">
+                    <img src="./top/mood.png" alt="Moods">
+                </a>
+            </figure>
+            <figure>
+                <figcaption>Greetings</figcaption>
+                <a href="./index5.html" target="_blank">
+                    <img src="./top/greetings.png" alt="Greetings">
+                </a>
+            </figure>
+            
+            <figure>
+                <figcaption>Hands</figcaption>
+                <a href="./index7.html" target="_blank">
+                    <img src="./top/hands.jpg" alt="Hands">
+                </a>
+            </figure>
+            <figure>
+                <figcaption>Sign</figcaption>
+                <a href="./index8.html" target="_blank">
+                    <img src="./top/sign.jpg" alt="Sign">
+                </a>
+            </figure>
+            <figure>
+                <figcaption>Alphabet</figcaption>
+                <a href="./index9.html" target="_blank">
+                    <img src="./top/Alphabet.webp" alt="Alphabet">
+                </a>
+            </figure>        
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Interactive Image Categories. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to speak text
+        function speak(text) {
+            const msg = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+</body>
+</html>

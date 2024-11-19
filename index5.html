@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f4f6;
+            color: #333;
+            text-align: center;
+        }
+    
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-transform: uppercase;
+        }
+    
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+    
+        figure {
+            margin: 0;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        figure:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            border: 3px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+    
+        img:hover {
+            border-color: #007bff;
+        }
+    
+        figcaption {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #444;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+    
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+    
+            img {
+                width: 140px;
+                height: 140px;
+            }
+    
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+    
+            img {
+                width: 100px;
+                height: 100px;
+            }
+    
+            figcaption {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>Greetings</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('Hello')">
+            <img src="./top/Greetings/Hello.jpg" alt="Hello">
+            <figcaption>Hello</figcaption>
+        </figure>
+        <figure onclick="speak('Can you please help me')">
+            <img src="./top/Greetings/Please.jpg" alt="Please">
+            <figcaption>Please</figcaption>
+        </figure>
+        <figure onclick="speak('I am Sorry')">
+            <img src="./top/Greetings/Sorry.jpg" alt="Sorry">
+            <figcaption>Sorry</figcaption>
+        </figure>
+        <figure onclick="speak('Its great news')">
+            <img src="./top/Greetings/Its_great_news.jpg" alt="Its_great_news">
+            <figcaption>Its_great_news</figcaption>
+        </figure>
+        <figure onclick="speak('Very good')">
+            <img src="./top/Greetings/Very_good.jpg" alt="Very_good">
+            <figcaption>Very_good</figcaption>
+        </figure>
+        <figure onclick="speak('Get Well Soon')">
+            <img src="./top/Greetings/Get_Well_Soon.jpg" alt="Get_Well_Soon">
+            <figcaption>Get_Well_Soon</figcaption>
+        </figure>
+        <figure onclick="speak('Excuse Me Please')">
+            <img src="./top/Greetings/Excuse Me.png" alt="Excuse Me">
+            <figcaption>Excuse Me</figcaption>
+        </figure>
+        <figure onclick="speak('Happy Birthday')">
+            <img src="./top/Greetings/Birthday.jpg" alt="Birthday">
+            <figcaption>Birthday</figcaption>
+        </figure>
+        <!-- Add more figures as needed -->
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance(" " + text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+
+</body>
+</html>

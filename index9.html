@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f9; /* Light background for a clean look */
+        }
+
+        header {
+            background-color: #4CAF50; /* Consistent header style */
+            color: white;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Space between items */
+        }
+
+        figure {
+            width: 150px;
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        figure:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .controls {
+            margin: 20px 0;
+        }
+
+        .button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .accumulated-text {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            border: 2px solid #4CAF50;
+            padding: 10px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alphabets</h1>
+    </header>
+
+    <div class="controls">
+        <button class="button" onclick="redirect()">Back</button>
+        <button class="button" onclick="addSpace()">Space</button>
+        <button class="button" onclick="speakFullWord()">Speak Full Word</button>
+        <div class="accumulated-text" id="accumulatedText">Your clicked letters will appear here!</div>
+    </div>
+
+    <div class="gallery">
+        <!-- Dynamically generate alphabet figures -->
+        <script>
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for (const letter of letters) {
+                document.write(`
+                    <figure onclick="addLetter('${letter}')">
+                        <img src="./top/Alphabets/${letter}.png" alt="${letter}">
+                        <figcaption>${letter}</figcaption>
+                    </figure>
+                `);
+            }
+        </script>
+    </div>
+
+    
+
+    <footer>
+        <p>&copy; 2024 Interactive Alphabets. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let accumulatedLetters = [];
+
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+        function speak(text) {
+            if (!text.trim()) {
+                alert("Please construct a word before speaking!");
+                return;
+            }
+            const msg = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(msg);
+        }
+
+        function addLetter(letter) {
+            accumulatedLetters.push(letter);
+            updateDisplay();
+        }
+
+        function addSpace() {
+            accumulatedLetters.push(' ');
+            updateDisplay();
+        }
+
+        function speakFullWord() {
+            const fullWord = accumulatedLetters.join('').trim();
+            speak(fullWord);
+            accumulatedLetters = [];
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("accumulatedText").textContent = accumulatedLetters.join('');
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                speakFullWord();
+            }
+        });
+    </script>
+</body>
+</html>

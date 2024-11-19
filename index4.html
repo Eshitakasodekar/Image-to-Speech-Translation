@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOODS</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+    
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+    
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+    
+        figure {
+            margin: 0;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        figure:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+    
+        img:hover {
+            border-color: #007bff;
+        }
+    
+        figcaption {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+    
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+    
+            img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+    
+            img {
+                width: 100px;
+                height: 100px;
+            }
+    
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>MOODS</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('Happy')">
+            <img src="./top/Mood/Happy.png" alt="Happy">
+            <figcaption>Happy</figcaption>
+        </figure>
+        <figure onclick="speak('Angry')">
+            <img src="./top/Mood/Angry.png" alt="Angry">
+            <figcaption>Angry</figcaption>
+        </figure>
+        <figure onclick="speak('Annoyed')">
+            <img src="./top/Mood/Annoyed.png" alt="Annoyed">
+            <figcaption>Annoyed</figcaption>
+        </figure>
+        <figure onclick="speak('Bored')">
+            <img src="./top/Mood/Bored.png" alt="Bored">
+            <figcaption>Bored</figcaption>
+        </figure>
+        <figure onclick="speak('Cool')">
+            <img src="./top/Mood/Cool.png" alt="Cool">
+            <figcaption>Cool</figcaption>
+        </figure>
+        <figure onclick="speak('Embarrassed')">
+            <img src="./top/Mood/Embarrassed.png" alt="Embarrassed">
+            <figcaption>Embarrassed</figcaption>
+        </figure>
+        <figure onclick="speak('Excited')">
+            <img src="./top/Mood/Excited.png" alt="Excited">
+            <figcaption>Excited</figcaption>
+        </figure>
+        <figure onclick="speak('Frustrated')">
+            <img src="./top/Mood/Frustrated.png" alt="Frustrated">
+            <figcaption>Frustrated</figcaption>
+        </figure>
+        <figure onclick="speak('Funny')">
+            <img src="./top/Mood/Funny.png" alt="Funny">
+            <figcaption>Funny</figcaption>
+        </figure>
+        <figure onclick="speak('Nervous')">
+            <img src="./top/Mood/Nervous.png" alt="Nervous">
+            <figcaption>Nervous</figcaption>
+        </figure>
+        <figure onclick="speak('Goofy')">
+            <img src="./top/Mood/Goofy.png" alt="Goofy">
+            <figcaption>Goofy</figcaption>
+        </figure>
+        <figure onclick="speak('Proud')">
+            <img src="./top/Mood/Proud.png" alt="Proud">
+            <figcaption>Proud</figcaption>
+        </figure>
+        <figure onclick="speak('Quiet')">
+            <img src="./top/Mood/Quiet.png" alt="Quiet">
+            <figcaption>Quiet</figcaption>
+        </figure>
+        <figure onclick="speak('Sad')">
+            <img src="./top/Mood/Sad.png" alt="Sad">
+            <figcaption>Sad</figcaption>
+        </figure>
+        <figure onclick="speak('Scared')">
+            <img src="./top/Mood/Scared.png" alt="Scared">
+            <figcaption>Scared</figcaption>
+        </figure>
+        <figure onclick="speak('Sick')">
+            <img src="./top/Mood/Sick.png" alt="Sick">
+            <figcaption>Sick</figcaption>
+        </figure>
+        <figure onclick="speak('Suprised')">
+            <img src="./top/Mood/Suprised.png" alt="Suprised">
+            <figcaption>Suprised</figcaption>
+        </figure>
+        <figure onclick="speak('Tired')">
+            <img src="./top/Mood/Tired.png" alt="Tired">
+            <figcaption>Tired</figcaption>
+        </figure>
+        <!-- Add more figures as needed -->
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance("I am " + text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+
+</body>
+</html>

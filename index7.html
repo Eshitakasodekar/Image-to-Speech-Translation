@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        figure {
+            margin: 0;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        figure:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            border: 3px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+
+        img:hover {
+            border-color: #007bff;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            img {
+                width: 140px;
+                height: 140px;
+            }
+
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            figcaption {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>Hands</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('OK!')" title="OK!">
+            <img src="./top/Hands/OK.png" alt="Hand gesture OK">
+            <figcaption>OK</figcaption>
+        </figure>
+        <figure onclick="speak('Thumbs up')" title="Thumbs up">
+            <img src="./top/Hands/Thumbs up.png" alt="Thumbs up gesture">
+            <figcaption>Thumbs Up</figcaption>
+        </figure>
+        <figure onclick="speak('Thumbs Down')" title="Thumbs Down">
+            <img src="./top/Hands/Thumbs down.png" alt="Thumbs Down gesture">
+            <figcaption>Thumbs Down</figcaption>
+        </figure>
+        <figure onclick="speak('Namaste')" title="Namaste">
+            <img src="./top/Hands/Namaste.png" alt="Namaste gesture">
+            <figcaption>Namaste</figcaption>
+        </figure>
+        <figure onclick="speak('Index pointing down')" title="Index pointing down">
+            <img src="./top/Hands/index pointing down.png" alt="Index pointing down gesture">
+            <figcaption>Point Down</figcaption>
+        </figure>
+        <figure onclick="speak('Index pointing left')" title="Index pointing left">
+            <img src="./top/Hands/index pointing left.png" alt="Index pointing left gesture">
+            <figcaption>Point Left</figcaption>
+        </figure>
+        <figure onclick="speak('Index pointing right')" title="Index pointing right">
+            <img src="./top/Hands/index pointing right.png" alt="Index pointing right gesture">
+            <figcaption>Point Right</figcaption>
+        </figure>
+        <figure onclick="speak('Index pointing up')" title="Index pointing up">
+            <img src="./top/Hands/index pointing up.png" alt="Index pointing up gesture">
+            <figcaption>Point Up</figcaption>
+        </figure>
+        <figure onclick="speak('Call Me')" title="Call Me">
+            <img src="./top/Hands/Call Me.png" alt="Call Me gesture">
+            <figcaption>Call Me</figcaption>
+        </figure>
+        <figure onclick="speak('Nice')" title="Nice">
+            <img src="./top/Hands/nice.png" alt="Nice gesture">
+            <figcaption>Nice</figcaption>
+        </figure>
+        <figure onclick="speak('Click finger')" title="Click finger">
+            <img src="./top/Hands/Click finger.png" alt="Click finger gesture">
+            <figcaption>Click Finger</figcaption>
+        </figure>
+        <figure onclick="speak('Raising hand')" title="Raising hand">
+            <img src="./top/Hands/Raising hand.png" alt="Raising hand gesture">
+            <figcaption>Raising Hand</figcaption>
+        </figure>
+        <figure onclick="speak('Victory')" title="Victory">
+            <img src="./top/Hands/Victory.png" alt="Victory gesture">
+            <figcaption>Victory</figcaption>
+        </figure>
+        <figure onclick="speak('Waving hand')" title="Waving hand">
+            <img src="./top/Hands/Waving hand.png" alt="Waving hand gesture">
+            <figcaption>Waving Hand</figcaption>
+        </figure>
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance(" " + text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+</body>
+</html>

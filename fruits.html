@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRUITS</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: #007bff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        figure {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        figure:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #eaeaea;
+        }
+
+        figcaption {
+            font-size: 1.1rem;
+            color: #555;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            figure {
+                width: 150px;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                padding: 10px;
+            }
+
+            figure {
+                width: 120px;
+            }
+
+            figcaption {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="redirect()">Back</button>
+    <h1>FRUITS</h1>
+
+    <div class="gallery">
+        <figure onclick="speak('Banana')">
+            <img src="./top/food types/fruits/Banana.png" alt="Banana">
+            <figcaption>Banana</figcaption>
+        </figure>
+        <figure onclick="speak('Watermelon')">
+            <img src="./top/food types/fruits/Watermelon.png" alt="Watermelon">
+            <figcaption>Watermelon</figcaption>
+        </figure>
+        <figure onclick="speak('water apple')">
+            <img src="./top/food types/fruits/water apple.png" alt="water apple">
+            <figcaption>Water apple</figcaption>
+        </figure>
+        <figure onclick="speak('pomegranate')">
+            <img src="./top/food types/fruits/pomegranate.png" alt="pomegranate">
+            <figcaption>Pomegranate</figcaption>
+        </figure>
+        <figure onclick="speak('pineapple')">
+            <img src="./top/food types/fruits/pineapple.png" alt="pineapple">
+            <figcaption>Pineapple</figcaption>
+        </figure>
+        <figure onclick="speak('Papaya')">
+            <img src="./top/food types/fruits/Papaya.png" alt="Papaya">
+            <figcaption>Papaya</figcaption>
+        </figure>
+        <figure onclick="speak('Orange')">
+            <img src="./top/food types/fruits/Orange.png" alt="Orange">
+            <figcaption>Orange</figcaption>
+        </figure>
+        <figure onclick="speak('muskmelon')">
+            <img src="./top/food types/fruits/muskmelon.png" alt="muskmelon">
+            <figcaption>Muskmelon</figcaption>
+        </figure>
+        <figure onclick="speak('Mango')">
+            <img src="./top/food types/fruits/Mango.png" alt="Mango">
+            <figcaption>Mango</figcaption>
+        </figure>
+        <figure onclick="speak('Starfruit')">
+            <img src="./top/food types/fruits/Starfruit.png" alt="Starfruit">
+            <figcaption>Starfruit</figcaption>
+        </figure>
+        <figure onclick="speak('rambutan')">
+            <img src="./top/food types/fruits/rambutan.png" alt="rambutan">
+            <figcaption>Rambutan</figcaption>
+        </figure>
+        <figure onclick="speak('Passion fruit')">
+            <img src="./top/food types/fruits/Passion fruit.png" alt="Passion fruit">
+            <figcaption>Passion fruit</figcaption>
+        </figure>
+        <figure onclick="speak('mangosteen')">
+            <img src="./top/food types/fruits/mangosteen.png" alt="mangosteena">
+            <figcaption>mangosteen</figcaption>
+        </figure>
+        <figure onclick="speak('Lychee')">
+            <img src="./top/food types/fruits/Lychee.png" alt="Lychee">
+            <figcaption>Lychee</figcaption>
+        </figure>
+        <figure onclick="speak('longan')">
+            <img src="./top/food types/fruits/longan.png" alt="longan">
+            <figcaption>Longan</figcaption>
+        </figure>
+        <figure onclick="speak('lemon')">
+            <img src="./top/food types/fruits/lemon.png" alt="lemon">
+            <figcaption>Lemon</figcaption>
+        </figure>
+        <figure onclick="speak('kiwi')">
+            <img src="./top/food types/fruits/kiwi.png" alt="kiwi">
+            <figcaption>Kiwi</figcaption>
+        </figure>
+        <figure onclick="speak('Jackfruit')">
+            <img src="./top/food types/fruits/jackfruit.png" alt="Jackfruit">
+            <figcaption>Jackfruit</figcaption>
+        </figure>
+        <figure onclick="speak('Guava')">
+            <img src="./top/food types/fruits/Guava.png" alt="Guava">
+            <figcaption>Guava</figcaption>
+        </figure>
+        <figure onclick="speak('Grapefruit')">
+            <img src="./top/food types/fruits/grapefruit.png" alt="Grapefruit">
+            <figcaption>Grapefruit</figcaption>
+        </figure>
+        <figure onclick="speak('Grape')">
+            <img src="./top/food types/fruits/Grape.png" alt="Grape">
+            <figcaption>Grape</figcaption>
+        </figure>
+        <figure onclick="speak('Fig')">
+            <img src="./top/food types/fruits/Fig.png" alt="fig">
+            <figcaption>Fig</figcaption>
+        </figure>
+        <figure onclick="speak('Dragon fruit')">
+            <img src="./top/food types/fruits/dragon fruit.png" alt="Dragon fruit">
+            <figcaption>Dragon fruit</figcaption>
+        </figure>
+        <figure onclick="speak('Custard Apple')">
+            <img src="./top/food types/fruits/Custard apple.png" alt="Custard Apple">
+            <figcaption>Custard Apple</figcaption>
+        </figure>
+        <figure onclick="speak('Coconut')">
+            <img src="./top/food types/fruits/Coconut.png" alt="Coconut">
+            <figcaption>Coconut</figcaption>
+        </figure>
+        <figure onclick="speak('Chikoo')">
+            <img src="./top/food types/fruits/chikoo.png" alt="Chikoo">
+            <figcaption>Chikoo</figcaption>
+        </figure>
+        <figure onclick="speak('Avocado')">
+            <img src="./top/food types/fruits/avocado.png" alt="Avocado">
+            <figcaption>Avocado</figcaption>
+        </figure>
+        <!-- Add more figures as needed -->
+    </div>
+
+    <!-- JavaScript function to use speech synthesis -->
+    <script>
+        function redirect() {
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance("I want " + text);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+
+</body>
+</html>
